@@ -1,0 +1,14 @@
+<div id="all-songs">
+    {% for song in pp %}
+        <div data-song='{{ song.song_number }}'
+             style="background: aquamarine; margin-top: 8px; margin-bottom: 8px; border-radius: 8px;">
+            <div onclick="play_song('play', Number(this.parentNode.getAttribute('data-song')));">
+                <div>{{ song.artist }} - {{ song.song_name }}</div>
+                <div>{{ song.album }}</div>
+            </div>
+            <div onclick="this.parentNode.remove(); delete_song_from_playlist('delete_song', {{ song.song_id }}, {{ playlist_id }});">
+                delete
+            </div>
+        </div>
+    {% endfor %}
+</div>

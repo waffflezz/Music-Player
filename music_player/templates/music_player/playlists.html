@@ -1,0 +1,16 @@
+{% for key, value in PLAYLISTS.items %}
+    <div style="display: flex">
+        <button class="btn btn-primary" type="button"
+                data-bs-toggle="offcanvas"
+                data-bs-target="#offcanvasScrolling"
+                aria-controls="offcanvasScrolling"
+                onclick="open_playlist('open_playlist', '{{ value.1 }}');">
+
+            {{ key }}
+        </button>
+        <div onclick="delete_playlist('delete_playlist', {{ value.1 }});">
+            delete
+        </div>
+    </div>
+    <br>
+{% endfor %}

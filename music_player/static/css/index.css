@@ -1,0 +1,10 @@
+.header {
+    padding-left: 15%;
+}
+
+.content {
+    max-width: 50%;
+    margin: auto;
+    padding-top: 8px;
+    /*background: aqua;*/
+}

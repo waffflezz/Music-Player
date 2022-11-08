@@ -1,0 +1,22 @@
+<div id="all-songs-main">
+    {% for song in songs %}
+        <div data-song='{{ song.song_number }}'
+             style="background: aquamarine; margin-top: 8px; margin-bottom: 8px; border-radius: 8px;">
+            <div>{{ song.artist }} - {{ song.song_name }}</div>
+            <div>{{ song.album }}</div>
+            <div class="dropdown">
+                <button class="btn btn-secondary btn-sm dropdown-toggle"
+                        type="button"
+                        data-bs-toggle="dropdown" aria-expanded="false">
+                    Add to playlist
+                </button>
+                <ul class="dropdown-menu">
+                    <li><a class="dropdown-item" data-bs-toggle="modal" data-bs-target="#exampleModal">+ add playlist</a></li>
+                    {% for playlist in playlists %}
+                        <li><a class="dropdown-item" onclick="add_song_to_playlist('add_to_playlist', {{ song.song_id }}, {{ playlist.pk }})">{{ playlist.title }}</a></li>
+                    {% endfor %}
+                </ul>
+            </div>
+        </div>
+    {% endfor %}
+</div>
